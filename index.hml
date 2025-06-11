@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Withdrawal Complaint Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e9f1f7, #ffffff);
+      padding: 40px 20px;
+    }
+
+    .form-container {
+      background: #ffffff;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 18px;
+      color: #444;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      padding: 14px;
+      margin-top: 25px;
+      border: none;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #0056cc;
+    }
+
+    .confirmation {
+      background: #d1e7dd;
+      color: #0f5132;
+      border: 1px solid #badbcc;
+      padding: 18px;
+      margin-top: 20px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Withdrawal Complaint Form</h2>
+    <form id="complaintForm">
+      <label>Full Name</label>
+      <input type="text" name="name" required />
+
+      <label>Email or Phone Number</label>
+      <input type="text" name="contact" required />
+
+      <label>Amount Withdrawn (₦)</label>
+      <input type="number" name="amount" required />
+
+      <label>Bank Name & Account Number</label>
+      <input type="text" name="bank" required />
+
+      <label>Date of Withdrawal</label>
+      <input type="date" name="date" required />
+
+      <label>Screenshot Link (optional)</label>
+      <input type="url" name="screenshot" placeholder="https://imgbb.com/..." />
+
+      <label>Do you want a priority manual trace? (₦11,050 fee)</label>
+      <select name="priority" required>
+        <option value="">--Select--</option>
+        <option value="Yes">Yes (₦11,050 fee applies)</option>
+        <option value="No">No</option>
+      </select>
+
+      <button type="submit">Submit Complaint</button>
+    </form>
+
+    <div class="confirmation" id="confirmationMessage">
+      ✅ Thank you! Your complaint has been submitted.<br><br>
+      If you selected <strong>priority manual trace</strong>, please pay <strong>₦11,050</strong> to:
+      <ul>
+        <li><strong>Account Name:</strong> LUKMAN ABDULSALAM</li>
+        <li><strong>Account Number:</strong> 9551259264</li>
+        <li><strong>Bank:</strong> PalmPay</li>
+      </ul>
+      We will review and respond within 24–48 hours.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("complaintForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("complaintForm").reset();
+      document.getElementById("confirmationMessage").style.display = "block";
+    });
+  </script>
+</body>
+</html
